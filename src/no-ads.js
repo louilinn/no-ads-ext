@@ -1,3 +1,4 @@
+// Set red border as test / indication plugin is running
 document.body.style.border = "5px solid red";
 
 browser.runtime.onMessage.addListener((message) => {

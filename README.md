@@ -13,7 +13,8 @@ Blocking filters
 https://help.adblockplus.org/hc/en-us/articles/360062733293-How-to-write-filters
 
 ## Todos
-- find if iframe on page
-- block all content based on condition
-- find network request
-- match network and update condition
+- [x] find if iframe on page
+- [x] block all content based on condition
+- [ ] find network request
+- [ ] match network and update condition
+- [ ] Add a popup to toggle on or off
