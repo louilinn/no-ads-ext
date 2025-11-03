@@ -9,10 +9,15 @@
     "48": "icons/black.svg"
   },
 
+  "permissions": ["webRequest", "<all_urls>"],
+
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["no-ads.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["no-ads-background.js"]
+  }
 }

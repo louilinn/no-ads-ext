@@ -4,7 +4,7 @@
 
 Follow the install and testing instructions [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#trying_it_out).
 
-## Fuck the internet
+## Fuck the commercial internet
 
 🔥🧨🌐🧨🔥
 
