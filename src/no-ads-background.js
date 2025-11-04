@@ -8,16 +8,22 @@ function detectBadUrl(requestDetails) {
 
     if (isBad) {
       console.log(requestDetails)
-      console.log("active rule:", badUrl)
+      console.log("matching rule:", badUrl)
+      const message = {
+        'block': true,
+        'requestUrl': requestDetails.url,
+        'matchingRule': badUrl
+      }
+
       browser.tabs.sendMessage(
         requestDetails.tabId,
-        "bad"
+        message
       ).catch((e) => {
         console.log("trying again")
         setTimeout(() => {
           browser.tabs.sendMessage(
             requestDetails.tabId,
-            "bad")
+            message)
           }, 500)
       })
 
