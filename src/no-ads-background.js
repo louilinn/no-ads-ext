@@ -34,16 +34,19 @@ async function loadUrls() {
   for (const line of text.split('\n')) {
     if(line[0] === '!' || line.substring(0, 2) === "@@" || line.includes('#')) continue
 
-    let simpleRule = line.split("$")[0]
-    simpleRule = simpleRule.replaceAll('.', '\\.')
-    simpleRule = simpleRule.replaceAll('/', '\\/')
-    simpleRule = simpleRule.replaceAll('?', '\\?')
-    simpleRule = simpleRule.replaceAll('[', '\\[')
-    simpleRule = simpleRule.replaceAll(']', '\\]')
-    simpleRule = simpleRule.replaceAll('||', '')
-    simpleRule = simpleRule.replaceAll('|', '')
-    simpleRule = simpleRule.replaceAll('^', '')
-
+    // Note, this is a simple hack to make use of the filters
+    // in the easylist. Should probably be revisited later.
+    // (I am jinxing it, this will be in the code until the heat death of the universe.)
+    let simpleRule = line
+      .split('$')[0]
+      .replaceAll('.', '\\.')
+      .replaceAll('/', '\\/')
+      .replaceAll('?', '\\?')
+      .replaceAll('[', '\\[')
+      .replaceAll(']', '\\]')
+      .replaceAll('||', '')
+      .replaceAll('|', '')
+      .replaceAll('^', '');
 
     console.log(line, simpleRule)
     if (simpleRule.length === 0) continue
